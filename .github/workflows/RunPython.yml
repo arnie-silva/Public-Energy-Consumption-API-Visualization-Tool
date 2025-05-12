@@ -1,7 +1,6 @@
 name: Run Python Script
 
 on: push
-  workflow_dispatch:
 
 env:
   api_key: ${{ secrets.API_KEY }}
