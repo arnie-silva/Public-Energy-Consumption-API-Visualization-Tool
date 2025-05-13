@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from app.models.schemas import Item
-from app.fetch_data import df
+from models.schemas import Item
+from fetch_data import df
 from fastapi.responses import JSONResponse
 
 router = APIRouter()
