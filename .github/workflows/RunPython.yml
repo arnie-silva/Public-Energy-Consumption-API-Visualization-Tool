@@ -19,6 +19,6 @@ jobs:
       
       - name: Run Python Script
         run: |
-          pip install requests
+          pip install requests fastapi pandas json os pydantic 
           python app/main.py
     
