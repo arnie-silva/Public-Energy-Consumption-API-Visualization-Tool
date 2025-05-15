@@ -7,7 +7,7 @@ data = response.json()
 with open('output.txt','w') as f:
         json.dump(data, f, indent=4)
 df = pandas.DataFrame(data['response']['data'])
-df['year'] = pandas.to_datetime(df['period'].astype(str), format="%Y")
+df['year'] = df['year'].astype(int)
 df['location'] = df['location'].astype(str)
 df['consumption-for-eg-btu'] = df['consumption-for-eg-btu'].astype(float)
 df['fueltypeid'] = df['fueltypeid'].astype(str)
@@ -19,3 +19,4 @@ print(df['consumption-for-eg-btu-units'].unique())
 print(df.head())
 print(df.dtypes)
 print(df.info())
+
