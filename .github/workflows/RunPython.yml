@@ -34,6 +34,7 @@ jobs:
           pip install --upgrade setuptools
           pip install lxml --prefer-binary
           pip install torch torchvision torchaudio
+          pip install uvicorn
           pip install -r requirements.txt
 
       - name: Run Python Script
