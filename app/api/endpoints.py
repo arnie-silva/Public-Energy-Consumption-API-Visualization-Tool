@@ -15,7 +15,7 @@ class EnergyPredictor(nn.Module):
         
         def forward(self, x):
                 return self.linear(x)
-model = EnergyPredictor
+model = EnergyPredictor()
 
 @router.get("/")
 def read_root():
