@@ -7,7 +7,7 @@ data = response.json()
 with open('output.txt','w') as f:
         json.dump(data, f, indent=4)
 df = pandas.DataFrame(data['response']['data'])
-df['year'] = df['year'].astype(int)
+df['year'] = df['period'].astype(int)
 df['location'] = df['location'].astype(str)
 df['consumption-for-eg-btu'] = df['consumption-for-eg-btu'].astype(float)
 df['fueltypeid'] = df['fueltypeid'].astype(str)
