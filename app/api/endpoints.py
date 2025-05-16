@@ -37,7 +37,9 @@ def read_state(state_id: str):
 @router.get("/predict/{state_id}/{year}")
 def predict(state_id: str, year: int):
     X = torch.tensor(df[(df['fueltypeid'] == 'ALL') & (df['location'] == state_id)]['year'].values, dtype=torch.float32)
+    X = X.view(-1,1)
     y = torch.tensor(df[(df['fueltypeid'] == 'ALL') & (df['location'] == state_id)]['total-consumption-btu'].values, dtype=torch.float32)
+    y = y.view(-1,1)
     criterion = nn.MSELoss()
     optimizer = optim.SGD(model.parameters(), lr=0.01)
 
